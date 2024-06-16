@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io demo</title>
+    <!-- tai file socket.io da install tai file server -->
+    <script src="socket.io/socket.io.js"></script>
+    <!-- Do phia server dang thiet lap thu muc static nen khi client request len server thi se tim file jquery trong thu muc public -->
+    <script src="jquery.js" ></script>
+
+    <script>
+        // ket noi toi websocket server
+        var socket = io("localhost:3000");
+
+        // lang nghe su kien server gui data ve 
+        socket.on("Server-send-data" , function(data){
+            $("#noidung").append(data + "<br>");
+        });
+
+        $(document).ready(function(){
+            $("#mrA").click(function(){
+                socket.emit("Client-send-data", "HELLO");
+            });
+
+            $("#fileInput").change(function(event){
+                var file = event.target.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var data = e.target.result;
+                        socket.emit("Client-send-pdf", data);
+                    };
+                    reader.readAsArrayBuffer(file);
+                }
+            });
+            
+            
+
+        });
+
+    </script>
+</head>
+<body>
+    
+    <input type="file" id="fileInput" accept="application/pdf">
+    <div id="mrA"> Click send</div>
+    <h2 id="noidung"></h2>
+
+</body>
+</html>
