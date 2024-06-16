@@ -1,0 +1,48 @@
+body{
+    background-color: blanchedalmond;
+}
+
+#wrapper{
+    width: 600px;
+    margin: auto;
+}
+
+
+#left , 
+#right{
+    min-height: 300px;
+}
+
+#left{
+    width: 30%;
+    float: left;
+}
+
+
+#right{
+    width: 70%;
+    float: right;
+}
+
+#boxTitle{
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;
+}
+
+
+#boxContent{
+    border: solid 1px black;
+    border-top: none;
+    padding: 5px;
+    text-align: center;
+}
+
+#sayHi{
+    text-align: right;
+}
+
+#listMessage{
+    height: 300px;
+    background-color: aquamarine;
+}

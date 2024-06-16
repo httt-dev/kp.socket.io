@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chu</title>
+    <link rel="stylesheet" type="text/css" href="layout.css" />
+     <!-- tai file socket.io da install tai file server -->
+     <script src="socket.io/socket.io.js"></script>
+     <!-- Do phia server dang thiet lap thu muc static nen khi client request len server thi se tim file jquery trong thu muc public -->
+     <script src="jquery.js" ></script>
+     <script src="socket_process.js" ></script>
+ 
+</head>
+<body>
+    <div id="wrapper">
+        <div id="loginForm">
+            <h3>What is your name</h3>
+            <input type="text" id="txtUsername" />
+            <input type="button" value="Register" id="btnRegister">
+        </div>
+        <div id="chatForm">
+            <div id="left">
+                <div id="boxTitle">Users Online</div>
+                <div id="boxContent">
+                    <!-- <div class='useronline'>A</div> -->
+                </div>
+            </div>
+            <div id="right">
+                <div id="sayHi">
+                    Hello <span id="currentUser">A</span>
+                    <input type="button" id="btnLogout" value="Logout">
+                </div>
+                <div id="listMessage">
+
+                </div>
+                <input type="text" name="txtMessage" id="txtMessage">
+                <input type="button" name="btnSendMessage" id="Send" value="Send">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
